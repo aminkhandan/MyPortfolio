@@ -1,0 +1,32 @@
+﻿@model List<Portfolio>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section id="one">
+    <header class="major">
+        <h2 style="text-align: center">
+            @ViewData["headingTitle"]
+        </h2>
+    </header>
+    <p style="text-align: center">
+        @ViewData["headingText"]
+    </p>
+</section>
+
+<section id="two">
+    <h2>نمونه کارهای اخیر</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <article class="6u 12u$(xsmall) work-item">
+                <a href="~/images/thumbs/@item.Image" class="image fit thumb">
+                    <img src="~/images/thumbs/@item.Image" alt="">
+                </a>
+                <h3>@item.Name</h3>
+                <p>@item.Description</p>
+            </article>
+        }
+        
+    </div>
+</section>
